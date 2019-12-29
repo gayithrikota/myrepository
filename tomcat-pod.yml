@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  annotations:
+    name: "QTDEVOPS"
+spec:
+  replicas: 1
+  selectors:
+    matchLables:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: tomcat
+        image: tomcat:8
+        ports:
+         - containerPort: 8080
+           protocol: TCP
