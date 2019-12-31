@@ -6,7 +6,7 @@ metadata:
     name: "QTDEVOPS"
 spec:
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       env: dev
   template:
